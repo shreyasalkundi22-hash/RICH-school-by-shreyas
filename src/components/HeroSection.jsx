@@ -55,36 +55,34 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               </span>
             </motion.div>
 
-            {/* 1. PRIMARY HERO HEADING: School Name */}
+            {/* 1. PRIMARY HERO HEADING: School Name (same large size as original main heading) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-brand-dark leading-[1.08] mb-4"
+              className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-dark leading-[1.15] mb-3"
             >
-              <span className="block text-brand-dark">Junior R.I.C.H.</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange uppercase text-2xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wide mt-1 whitespace-nowrap">
-                PRE-PRIMARY SCHOOL
-              </span>
-            </motion.h1>
-
-            {/* 2. TAGLINE: Moved directly underneath the school name */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-serif text-lg sm:text-2xl lg:text-3xl font-bold text-brand-dark tracking-tight leading-snug mb-4"
-            >
-              Where Little Minds Begin{' '}
-              <span className="relative inline-block text-brand-green">
-                Big Journeys.
-                <svg className="absolute -bottom-1 left-0 w-full h-2.5 text-brand-leafGreen/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              Junior R.I.C.H.{' '}
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange">
+                Pre-Primary School
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
                 </svg>
               </span>
-            </motion.h2>
+            </motion.h1>
 
-            {/* 3. SUPPORTING DESCRIPTION: Underneath tagline */}
+            {/* 2. TAGLINE: Added right below the school name in small size */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-sm sm:text-base lg:text-lg font-bold text-brand-green tracking-wide uppercase mb-3 flex items-center justify-center lg:justify-start gap-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-brand-leafGreen animate-pulse shrink-0" />
+              <span>Where Little Minds Begin Big Journeys.</span>
+            </motion.p>
+
+            {/* 3. SUPPORTING DESCRIPTION */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
