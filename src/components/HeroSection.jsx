@@ -1,0 +1,179 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, ArrowRight, Sun, Heart, Star, BookOpen, Smile, Award } from 'lucide-react';
+
+export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
+  return (
+    <section id="home" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#FFFDF9] to-[#F4F9F2]">
+      
+      {/* Background Soft Blobs & Floating Elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/40 rounded-full blur-3xl blob-shape-1 animate-float-slow pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl blob-shape-2 animate-float-medium pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+
+      {/* Floating vector decorations */}
+      <motion.div 
+        animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }} 
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-32 left-8 md:left-20 text-brand-gold opacity-70 hidden sm:block pointer-events-none"
+      >
+        <Sun className="w-10 h-10 stroke-[1.5]" />
+      </motion.div>
+
+      <motion.div 
+        animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }} 
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        className="absolute bottom-24 left-16 text-brand-leafGreen opacity-60 hidden sm:block pointer-events-none"
+      >
+        <Star className="w-8 h-8 fill-brand-leafGreen/20 stroke-[1.5]" />
+      </motion.div>
+
+      <motion.div 
+        animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }} 
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        className="absolute top-44 right-12 text-brand-orange opacity-70 hidden md:block pointer-events-none"
+      >
+        <Heart className="w-7 h-7 fill-brand-orange/20 stroke-[1.5]" />
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Hero Content */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            
+            {/* Playful Tag */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-6"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-leafGreen animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
+                Admissions Open 2026-27 • Keshwapur, Hubballi
+              </span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-dark leading-[1.15] mb-6"
+            >
+              Where Little Minds Begin{' '}
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange">
+                Big Journeys.
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                </svg>
+              </span>
+            </motion.h1>
+
+            {/* Supporting Text */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-base sm:text-lg lg:text-xl text-stone-600 max-w-2xl font-normal leading-relaxed mb-8"
+            >
+              A joyful learning environment where curiosity grows, confidence shines and every child discovers the joy of learning.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            >
+              <button
+                onClick={() => onOpenComingSoon('Explore Our School')}
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3 group"
+              >
+                <span>Explore Our School</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button
+                onClick={onOpenEnquiry}
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-base border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+              >
+                <Sparkles className="w-5 h-5 text-brand-gold" />
+                <span>Admissions Enquiry</span>
+              </button>
+            </motion.div>
+
+            {/* Micro Highlights */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="grid grid-cols-3 gap-4 pt-10 mt-6 border-t border-amber-100/80 w-full max-w-lg"
+            >
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-green">Play Home</span>
+                <span className="text-xs text-stone-500 font-medium">To 4th Standard</span>
+              </div>
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-gold">Karate & Yoga</span>
+                <span className="text-xs text-stone-500 font-medium">Co-Curricular</span>
+              </div>
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-blue">Montessori</span>
+                <span className="text-xs text-stone-500 font-medium">Curriculum</span>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Right Visual Image Composition */}
+          <div className="lg:col-span-5 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative mx-auto max-w-md lg:max-w-none"
+            >
+              {/* Organic Frame Wrapper */}
+              <div className="relative rounded-[2.5rem] overflow-hidden p-3 bg-gradient-to-tr from-amber-200 via-emerald-100 to-sky-200 shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80"
+                  alt="Preschool children learning and playing joyfully"
+                  className="w-full h-[400px] sm:h-[480px] object-cover rounded-[2rem]"
+                />
+                
+                {/* Overlay Badge 1 */}
+                <div className="absolute top-8 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-stone-100 flex items-center gap-3 animate-float-slow">
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-brand-gold">
+                    <Smile className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-stone-800">Joyful Learning</p>
+                    <p className="text-[10px] text-stone-500">Nurturing Environment</p>
+                  </div>
+                </div>
+
+                {/* Overlay Badge 2 */}
+                <div className="absolute -bottom-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-stone-100 flex items-center gap-3 animate-float-medium">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-brand-green">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-stone-800">Confidence & Growth</p>
+                    <p className="text-[10px] text-stone-500">Holistic Care</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  );
+}
