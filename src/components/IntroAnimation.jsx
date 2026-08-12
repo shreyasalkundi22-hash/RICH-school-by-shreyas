@@ -76,11 +76,11 @@ export default function IntroAnimation({ forceReplay, onComplete }) {
           </span>
         </div>
 
-        {/* Center Masking Typography */}
+        {/* Center Masking Typography: BELIEVE. ACHIEVE. SUCCEED. */}
         <div className="my-auto flex flex-col items-center justify-center text-center py-12 z-10">
           <div className="flex flex-col gap-2 md:gap-4 font-serif text-4xl sm:text-6xl md:text-8xl tracking-tight leading-none font-bold">
             
-            {/* BELIEVE */}
+            {/* BELIEVE. */}
             <div className="overflow-hidden py-1">
               <motion.span
                 initial={{ y: "120%", opacity: 0, scale: 0.95 }}
@@ -88,11 +88,11 @@ export default function IntroAnimation({ forceReplay, onComplete }) {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="block text-[#F5B025]"
               >
-                BELIEVE
+                BELIEVE.
               </motion.span>
             </div>
 
-            {/* ACHIEVE */}
+            {/* ACHIEVE. */}
             <div className="overflow-hidden py-1">
               <motion.span
                 initial={{ y: "120%", opacity: 0, scale: 0.95 }}
@@ -100,11 +100,11 @@ export default function IntroAnimation({ forceReplay, onComplete }) {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="block text-[#76A035]"
               >
-                ACHIEVE
+                ACHIEVE.
               </motion.span>
             </div>
 
-            {/* SUCCEED */}
+            {/* SUCCEED. */}
             <div className="overflow-hidden py-1">
               <motion.span
                 initial={{ y: "120%", opacity: 0, scale: 0.95 }}
