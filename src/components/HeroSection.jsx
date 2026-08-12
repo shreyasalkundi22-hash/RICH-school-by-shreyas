@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Sun, Heart, Star, BookOpen, Smile, Award } from 'lucide-react';
+import { Sparkles, ArrowRight, Sun, Heart, Star, Smile, Award } from 'lucide-react';
 
 export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
   return (
@@ -42,12 +42,12 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
           {/* Left Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             
-            {/* Playful Tag */}
+            {/* Admissions Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-5"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-brand-leafGreen animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
@@ -55,33 +55,46 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               </span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* 1. PRIMARY HERO HEADING: School Name */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-dark leading-[1.15] mb-6"
+              className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-brand-dark leading-[1.08] mb-4"
             >
-              Where Little Minds Begin{' '}
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange">
-                Big Journeys.
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                </svg>
+              <span className="block text-brand-dark">Junior R.I.C.H.</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange uppercase text-2xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wide mt-1 whitespace-nowrap">
+                PRE-PRIMARY SCHOOL
               </span>
             </motion.h1>
 
-            {/* Supporting Text */}
-            <motion.p
+            {/* 2. TAGLINE: Moved directly underneath the school name */}
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-stone-600 max-w-2xl font-normal leading-relaxed mb-8"
+              className="font-serif text-lg sm:text-2xl lg:text-3xl font-bold text-brand-dark tracking-tight leading-snug mb-4"
+            >
+              Where Little Minds Begin{' '}
+              <span className="relative inline-block text-brand-green">
+                Big Journeys.
+                <svg className="absolute -bottom-1 left-0 w-full h-2.5 text-brand-leafGreen/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                </svg>
+              </span>
+            </motion.h2>
+
+            {/* 3. SUPPORTING DESCRIPTION: Underneath tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="text-base sm:text-lg text-stone-600 max-w-2xl font-normal leading-relaxed mb-8"
             >
               A joyful learning environment where curiosity grows, confidence shines and every child discovers the joy of learning.
             </motion.p>
 
-            {/* CTAs */}
+            {/* 4. ACTION BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
