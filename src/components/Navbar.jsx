@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Sparkles, Send } from 'lucide-react';
+import logoImg from '../assets/logo.jpg';
 
 export default function Navbar({ onOpenEnquiry, onOpenComingSoon }) {
   const [scrolled, setScrolled] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-2 sm:pt-3.5 px-2 sm:px-4 pointer-events-none transition-all duration-500 ease-out">
       
-      {/* Real Translucent iOS Liquid Glass Floating Navigation Panel */}
+      {/* Real Ultra-Transparent iOS Liquid Glass Floating Navigation Panel */}
       <div
         className={`pointer-events-auto w-[95vw] max-w-[1440px] mx-auto rounded-[20px] sm:rounded-[24px] transition-all duration-500 ease-out ${
           scrolled ? 'liquid-glass-panel-scrolled py-2 px-3 sm:px-5' : 'liquid-glass-panel py-2.5 px-3 sm:px-5'
@@ -53,11 +54,11 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon }) {
           
           {/* Brand Logo & Compact Name Container (shrink-0) */}
           <a href="#home" className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none shrink-0">
-            <div className="relative bg-white/90 p-1 sm:p-1.5 rounded-xl shadow-sm border border-white/80 group-hover:scale-105 transition-transform duration-300 ease-out shrink-0">
+            <div className="relative bg-white/95 p-1 sm:p-1.5 rounded-xl shadow-sm border border-white/90 group-hover:scale-105 transition-transform duration-300 ease-out shrink-0">
               <img
-                src="/logo.jpg"
+                src={logoImg}
                 alt="Junior R.I.C.H. Pre-Primary School Logo"
-                className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg"
+                className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg block"
               />
             </div>
             

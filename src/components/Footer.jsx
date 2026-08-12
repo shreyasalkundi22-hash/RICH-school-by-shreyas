@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Navigation, Play, Heart } from 'lucide-react';
+import logoImg from '../assets/logo.jpg';
 
 export default function Footer({ onOpenComingSoon, onReplayIntro }) {
   const links = [
@@ -29,9 +30,9 @@ export default function Footer({ onOpenComingSoon, onReplayIntro }) {
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <img
-                src="/logo.jpg"
+                src={logoImg}
                 alt="Junior R.I.C.H. Logo"
-                className="w-12 h-12 object-contain rounded-xl bg-white p-1 shadow-md"
+                className="w-12 h-12 object-contain rounded-xl bg-white p-1 shadow-md block"
               />
               <div className="flex flex-col">
                 <span className="font-serif text-xl font-bold tracking-tight text-white">
