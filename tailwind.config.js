@@ -24,6 +24,9 @@ export default {
       },
       fontFamily: {
         display: ['Fraunces', 'serif'],
+        playfair: ['Playfair Display', 'serif'],
+        outfit: ['Outfit', 'sans-serif'],
+        dmserif: ['DM Serif Display', 'serif'],
         sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       borderRadius: {

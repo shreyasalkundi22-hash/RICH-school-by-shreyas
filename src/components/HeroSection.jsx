@@ -55,15 +55,15 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               </span>
             </motion.div>
 
-            {/* 1. PRIMARY HERO HEADING: School Name (same large size as original main heading) */}
+            {/* 1. PRIMARY HERO HEADING: School Name with Distinctive New Font Style */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-brand-dark leading-[1.15] mb-3"
+              className="font-outfit text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-dark leading-[1.15] mb-3"
             >
               Junior R.I.C.H.{' '}
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange">
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal">
                 Pre-Primary School
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
