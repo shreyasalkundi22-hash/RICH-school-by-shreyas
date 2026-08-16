@@ -11,10 +11,10 @@ import AboutSection from './components/AboutSection';
 import FacilitiesSection from './components/FacilitiesSection';
 import FacultySection from './components/FacultySection';
 import GallerySection from './components/GallerySection';
+import SchoolPoliciesSection from './components/SchoolPoliciesSection';
 import AdmissionsCTA from './components/AdmissionsCTA';
 import ContactSection from './components/ContactSection';
 import ComingSoonModal from './components/ComingSoonModal';
-import PolicyViewer from './components/PolicyViewer';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -23,7 +23,6 @@ export default function App() {
     isOpen: false,
     topic: ''
   });
-  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
   const handleOpenComingSoon = (topicTitle = 'Special Feature') => {
     setComingSoonModal({
@@ -40,11 +39,10 @@ export default function App() {
   };
 
   const handleOpenPolicy = () => {
-    setIsPolicyOpen(true);
-  };
-
-  const handleClosePolicy = () => {
-    setIsPolicyOpen(false);
+    const policyElement = document.getElementById('policy');
+    if (policyElement) {
+      policyElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleOpenEnquiry = () => {
@@ -63,7 +61,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-brand-cream text-brand-dark relative font-sans selection:bg-brand-gold selection:text-white">
       
-      {/* Awwwards Desktop Custom Cursor */}
+      {/* Desktop Custom Cursor */}
       <CustomCursor />
 
       {/* 1. Fullscreen Intro Animation */}
@@ -88,7 +86,7 @@ export default function App() {
         {/* 4. Quick School Intro */}
         <SchoolIntro />
 
-        {/* 5. Learning Philosophy (Believe, Achieve, Succeed) */}
+        {/* 5. Learning Philosophy */}
         <PhilosophySection />
 
         {/* 6. Academic Programs */}
@@ -112,28 +110,25 @@ export default function App() {
         {/* 11. School Gallery */}
         <GallerySection onOpenComingSoon={handleOpenComingSoon} />
 
-        {/* 12. Admissions CTA */}
+        {/* 12. School Policies Section (DISPLAYED BEFORE ADMISSIONS & CONTACT WITH PAGE TURN ANIMATIONS) */}
+        <SchoolPoliciesSection />
+
+        {/* 13. Admissions CTA */}
         <AdmissionsCTA
           onOpenEnquiry={handleOpenEnquiry}
           onOpenComingSoon={handleOpenComingSoon}
         />
 
-        {/* 13. Contact & Verified Enquiry Form */}
+        {/* 14. Contact & Verified Enquiry Form */}
         <ContactSection />
       </main>
 
-      {/* 14. Universal Coming Soon Modal System */}
+      {/* 15. Universal Coming Soon Modal System */}
       <ComingSoonModal
         isOpen={comingSoonModal.isOpen}
         onClose={handleCloseComingSoon}
         topicTitle={comingSoonModal.topic}
         onOpenEnquiry={handleOpenEnquiry}
-      />
-
-      {/* 15. Official Interactive School Policy Document Viewer */}
-      <PolicyViewer
-        isOpen={isPolicyOpen}
-        onClose={handleClosePolicy}
       />
 
       {/* 16. Multi-Column Footer */}
