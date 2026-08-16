@@ -200,7 +200,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
               <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400 inline" />
               <span>for Hubballi’s Young Learners</span>
             </p>
-            <p className="text-emerald-200/70 text-xs font-medium text-center">
+            <p className="text-pink-400 text-xs font-medium text-center">
               Where ideas meet pixels, designed by Shreyas Alkundi.
             </p>
           </div>
