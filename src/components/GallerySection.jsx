@@ -12,28 +12,28 @@ export default function GallerySection({ onOpenComingSoon }) {
       title: 'Montessori Practical Exploration',
       category: 'Activities',
       img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80',
-      span: 'lg:col-span-8 h-80',
+      span: 'lg:col-span-8 h-80 sm:h-96',
     },
     {
       id: 2,
       title: 'Classroom Storytelling Session',
       category: 'Learning',
       img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80',
-      span: 'lg:col-span-4 h-80',
+      span: 'lg:col-span-4 h-80 sm:h-96',
     },
     {
       id: 3,
       title: 'Karate & Physical Training',
       category: 'Sports',
       img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80',
-      span: 'lg:col-span-4 h-80',
+      span: 'lg:col-span-4 h-80 sm:h-96',
     },
     {
       id: 4,
       title: 'Art & Creative Craft Workshop',
       category: 'Activities',
       img: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80',
-      span: 'lg:col-span-8 h-80',
+      span: 'lg:col-span-8 h-80 sm:h-96',
     },
   ];
 
@@ -54,19 +54,19 @@ export default function GallerySection({ onOpenComingSoon }) {
   };
 
   return (
-    <section id="gallery" className="py-24 bg-white relative overflow-hidden">
+    <section id="gallery" className="py-24 bg-[#18181B] text-white relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-mono font-bold uppercase tracking-wider mb-3">
               <Image className="w-3.5 h-3.5" />
-              <span>Campus Memories</span>
+              <span>08 — Visual Archives</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark tracking-tight">
-              Photo Showcase
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+              Full-Screen Gallery
             </h2>
           </div>
 
@@ -76,10 +76,10 @@ export default function GallerySection({ onOpenComingSoon }) {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
                   activeFilter === cat
-                    ? 'bg-brand-green text-white shadow-md'
-                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                    ? 'bg-brand-gold text-stone-900 shadow-lg'
+                    : 'bg-white/10 text-stone-300 hover:bg-white/20'
                 }`}
               >
                 {cat}
@@ -98,7 +98,7 @@ export default function GallerySection({ onOpenComingSoon }) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               onClick={() => setLightboxIndex(idx)}
-              className={`relative rounded-3xl overflow-hidden shadow-xl border border-stone-200 cursor-pointer group ${item.span}`}
+              className={`relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 cursor-pointer group ${item.span}`}
               data-cursor="OPEN"
             >
               <img
@@ -108,11 +108,11 @@ export default function GallerySection({ onOpenComingSoon }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
 
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-white">
                 <span className="text-[10px] font-mono font-bold uppercase text-amber-300 tracking-wider block">
                   {item.category}
                 </span>
-                <h3 className="font-serif text-lg font-bold">{item.title}</h3>
+                <h3 className="font-serif text-xl font-bold">{item.title}</h3>
               </div>
             </motion.div>
           ))}
@@ -127,7 +127,7 @@ export default function GallerySection({ onOpenComingSoon }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-stone-950/90 backdrop-blur-xl flex flex-col items-center justify-between p-6"
+            className="fixed inset-0 z-[100] bg-stone-950/95 backdrop-blur-2xl flex flex-col items-center justify-between p-6"
           >
             <div className="w-full max-w-5xl flex items-center justify-between text-white z-10">
               <span className="font-serif font-bold text-lg text-amber-300">

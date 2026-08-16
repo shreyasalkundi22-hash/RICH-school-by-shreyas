@@ -62,7 +62,7 @@ export default function SchoolPoliciesSection() {
   };
 
   return (
-    <section id="policy" className="py-20 md:py-28 bg-gradient-to-b from-[#F4F9F2] via-[#FAF8F5] to-white relative overflow-hidden">
+    <section id="policy" className="py-24 bg-[#FAF6EE] relative overflow-hidden">
       
       {/* Soft Background Blobs */}
       <div className="absolute top-1/4 right-10 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
@@ -79,7 +79,7 @@ export default function SchoolPoliciesSection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-brand-green text-xs font-bold uppercase tracking-wider mb-4"
           >
             <ShieldCheck className="w-4 h-4 text-brand-green" />
-            <span>Official Institution Guidelines</span>
+            <span>09 — Official Booklet</span>
           </motion.div>
 
           {/* Heading: School Policies */}
@@ -88,7 +88,7 @@ export default function SchoolPoliciesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark tracking-tight leading-tight mb-4"
+            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-dark tracking-tight leading-tight mb-4"
           >
             School Policies
           </motion.h2>
@@ -100,7 +100,7 @@ export default function SchoolPoliciesSection() {
             transition={{ delay: 0.2 }}
             className="text-stone-600 text-sm sm:text-base leading-relaxed"
           >
-            Flip through the official 4-page policy document of <strong>Jr. R.I.C.H. Pre-Primary School</strong>. Click the arrow marks or page controls to turn pages.
+            Flip through the official 4-page policy document of <strong>Jr. R.I.C.H. Pre-Primary School</strong>. Press the arrow marks or page controls to turn pages.
           </motion.p>
         </div>
 

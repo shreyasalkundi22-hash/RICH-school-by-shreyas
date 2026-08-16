@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Heart, Sparkles, Activity } from 'lucide-react';
+import { Activity, Sparkles } from 'lucide-react';
 
 export default function ActivitiesSection({ onOpenComingSoon }) {
   const activities = [
@@ -21,23 +21,23 @@ export default function ActivitiesSection({ onOpenComingSoon }) {
   ];
 
   return (
-    <section id="activities" className="py-24 bg-[#1C2518] text-white relative overflow-hidden">
+    <section id="activities" className="py-24 bg-[#FFF8F0] relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-200/60 text-amber-900 text-xs font-mono font-bold uppercase tracking-wider mb-3">
               <Activity className="w-3.5 h-3.5" />
-              <span>Co-Curricular Excellence</span>
+              <span>06 — Co-Curricular Showcase</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-dark tracking-tight">
               Karate & Yoga Training
             </h2>
           </div>
 
-          <p className="text-emerald-100/70 text-sm sm:text-base max-w-md">
+          <p className="text-stone-600 text-sm sm:text-base max-w-md">
             Integrated physical development modules offered to foster stamina, discipline, and emotional balance from an early age.
           </p>
         </div>
@@ -52,10 +52,10 @@ export default function ActivitiesSection({ onOpenComingSoon }) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
               onClick={() => onOpenComingSoon(act.title)}
-              className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:bg-white/10 transition-all duration-300 group cursor-pointer"
+              className="bg-white border border-stone-200/80 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer"
               data-cursor="VIEW"
             >
-              <div className="relative h-64 sm:h-72 overflow-hidden">
+              <div className="relative h-64 sm:h-76 overflow-hidden">
                 <img
                   src={act.img}
                   alt={act.title}
@@ -67,11 +67,11 @@ export default function ActivitiesSection({ onOpenComingSoon }) {
               </div>
 
               <div className="p-6 sm:p-8 space-y-3">
-                <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider block">
+                <span className="text-xs font-bold text-brand-green uppercase tracking-wider block">
                   {act.subtitle}
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-white">{act.title}</h3>
-                <p className="text-emerald-100/70 text-xs sm:text-sm leading-relaxed">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900">{act.title}</h3>
+                <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
                   {act.description}
                 </p>
               </div>

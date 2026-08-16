@@ -9,7 +9,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
     { name: 'Our School', comingSoon: true, title: 'Our School Story' },
     { name: 'About Us', href: '#about' },
     { name: 'Academics', href: '#programs' },
-    { name: 'School Policy Document', isPolicy: true },
+    { name: 'School Policies', href: '#policy' },
     { name: 'Faculty', comingSoon: true, title: 'Faculty & Educators' },
     { name: 'Facilities', comingSoon: true, title: 'Campus Facilities' },
     { name: 'Gallery', comingSoon: true, title: 'School Gallery' },
@@ -22,11 +22,16 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
   )}`;
 
   return (
-    <footer className="bg-[#1C2518] text-white pt-16 pb-12 relative overflow-hidden border-t-4 border-brand-gold">
+    <footer className="bg-[#0E140C] text-white pt-20 pb-12 relative overflow-hidden border-t-4 border-brand-gold">
       
+      {/* Background Oversized Watermark Typography */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-5 font-outfit text-[14vw] font-black uppercase whitespace-nowrap text-white">
+        Jr. R.I.C.H.
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-emerald-900/60">
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-5 flex flex-col gap-4">
@@ -81,20 +86,12 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
           {/* Quick Links Column */}
           <div className="lg:col-span-3">
             <h4 className="font-serif text-lg font-bold text-white mb-4 pb-2 border-b border-emerald-800/80 inline-block">
-              Quick Links
+              Quick Navigation
             </h4>
-            <ul className="space-y-2 text-xs font-semibold">
+            <ul className="space-y-2.5 text-xs font-semibold">
               {links.map((link) => (
                 <li key={link.name}>
-                  {link.isPolicy ? (
-                    <button
-                      onClick={onOpenPolicy}
-                      className="text-amber-300 hover:text-white font-bold transition-colors flex items-center gap-1.5"
-                    >
-                      <FileText className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{link.name}</span>
-                    </button>
-                  ) : link.comingSoon ? (
+                  {link.comingSoon ? (
                     <button
                       onClick={() => onOpenComingSoon(link.title)}
                       className="text-emerald-100/70 hover:text-brand-gold transition-colors flex items-center gap-1.5"
@@ -124,7 +121,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
             <div className="space-y-3 text-xs text-emerald-100/80 mb-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-gold" />
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 font-mono font-semibold">
                   <a href="tel:+919972477742" className="hover:text-white underline">+91 9972477742</a>
                   <span>•</span>
                   <a href="tel:+917019497751" className="hover:text-white underline">+91 7019497751</a>
@@ -133,7 +130,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
 
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-gold" />
-                <a href="tel:+917676997407" className="hover:text-white underline">+91 7676997407</a>
+                <a href="tel:+917676997407" className="hover:text-white underline font-mono font-semibold">+91 7676997407</a>
               </div>
 
               <div className="flex items-center gap-2">
@@ -146,13 +143,13 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
 
             {/* Replay Intro Animation Toggle */}
             <div className="flex flex-col gap-2">
-              <button
-                onClick={onOpenPolicy}
+              <a
+                href="#policy"
                 className="px-4 py-2.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 text-xs font-bold transition-all border border-amber-400/40 inline-flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4 text-amber-300" />
-                <span>View School Policy Document</span>
-              </button>
+                <span>View School Policies</span>
+              </a>
 
               <button
                 onClick={onReplayIntro}

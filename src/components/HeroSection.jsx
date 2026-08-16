@@ -6,62 +6,53 @@ import trustLogoImg from '../assets/trust_logo.jpg';
 
 export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }) {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#FFFDF9] to-[#F4F9F2]">
+    <section id="home" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-[#FAF8F5]">
       
-      {/* Background Soft Blobs & Floating Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/40 rounded-full blur-3xl blob-shape-1 animate-float-slow pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl blob-shape-2 animate-float-medium pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-sky-200/30 rounded-full blur-2xl pointer-events-none" />
+      {/* Soft Background Radial Lighting */}
+      <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[600px] h-[600px] bg-emerald-200/20 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Floating vector decorations */}
       <motion.div 
-        animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }} 
-        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-32 left-8 md:left-20 text-brand-gold opacity-70 hidden sm:block pointer-events-none"
+        animate={{ y: [0, -18, 0], rotate: [0, 12, 0] }} 
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-36 left-10 md:left-24 text-brand-gold opacity-60 hidden sm:block pointer-events-none"
       >
-        <Sun className="w-10 h-10 stroke-[1.5]" />
+        <Sun className="w-12 h-12 stroke-[1.5]" />
       </motion.div>
 
       <motion.div 
-        animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }} 
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-        className="absolute bottom-24 left-16 text-brand-leafGreen opacity-60 hidden sm:block pointer-events-none"
+        animate={{ y: [0, 14, 0], rotate: [0, -10, 0] }} 
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        className="absolute bottom-28 left-20 text-brand-leafGreen opacity-50 hidden sm:block pointer-events-none"
       >
-        <Star className="w-8 h-8 fill-brand-leafGreen/20 stroke-[1.5]" />
-      </motion.div>
-
-      <motion.div 
-        animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }} 
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-        className="absolute top-44 right-12 text-brand-orange opacity-70 hidden md:block pointer-events-none"
-      >
-        <Heart className="w-7 h-7 fill-brand-orange/20 stroke-[1.5]" />
+        <Star className="w-10 h-10 fill-brand-leafGreen/20 stroke-[1.5]" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Hero Content */}
+          {/* Left Column: Oversized Editorial Typography Composition */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             
-            {/* OFFICIAL SCHOOL LOGO DISPLAYED AT THE STARTING BEFORE SCHOOL NAME */}
+            {/* OFFICIAL DUAL LOGO BADGE */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-6 p-2.5 rounded-2xl bg-white/80 backdrop-blur-md shadow-sm border border-stone-200/80"
+              className="flex items-center gap-3 mb-6 p-2 rounded-2xl bg-white/90 backdrop-blur-md shadow-sm border border-stone-200/80"
             >
               <img
                 src={schoolLogoImg}
                 alt="Jr. R.I.C.H. Official School Logo"
-                className="h-12 sm:h-14 w-auto object-contain bg-white rounded-xl p-1 shadow-sm"
+                className="h-11 sm:h-12 w-auto object-contain bg-white rounded-xl p-1 shadow-sm"
               />
-              <div className="h-10 w-px bg-stone-200 hidden sm:block" />
+              <div className="h-9 w-px bg-stone-200 hidden sm:block" />
               <div className="hidden sm:flex items-center gap-2">
                 <img
                   src={trustLogoImg}
                   alt="Param Jyoti Foundation"
-                  className="h-10 w-auto object-contain bg-white rounded-lg p-0.5"
+                  className="h-9 w-auto object-contain bg-white rounded-lg p-0.5"
                 />
                 <div className="text-left">
                   <span className="text-[10px] uppercase font-bold tracking-widest text-brand-green block leading-tight">A Unit of</span>
@@ -75,7 +66,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-4"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/70 border border-emerald-200 shadow-sm mb-5"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-brand-leafGreen animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
@@ -83,53 +74,50 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               </span>
             </motion.div>
 
-            {/* 1. PRIMARY HERO HEADING: School Name */}
+            {/* OVERSIZED 8XL/9XL DISPLAY HEADING */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="font-outfit text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-dark leading-[1.15] mb-3"
+              className="font-outfit text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold tracking-tight text-brand-dark leading-[0.98] mb-4"
             >
-              Jr. R.I.C.H.{' '}
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal">
+              Jr. R.I.C.H.
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal text-3xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-normal mt-2">
                 Pre-Primary School
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.00024 7C53.6669 2.33333 167.2 -2.2 198 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-                </svg>
               </span>
             </motion.h1>
 
-            {/* 2. TAGLINE */}
+            {/* TAGLINE */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-sm sm:text-base lg:text-lg font-bold text-brand-green tracking-wide uppercase mb-3 flex items-center justify-center lg:justify-start gap-2"
+              className="text-base sm:text-xl font-bold text-brand-green tracking-wide uppercase mb-4 flex items-center justify-center lg:justify-start gap-2"
             >
               <span className="w-2 h-2 rounded-full bg-brand-leafGreen animate-pulse shrink-0" />
               <span>Where Little Minds Begin Big Journeys.</span>
             </motion.p>
 
-            {/* 3. SUPPORTING DESCRIPTION */}
+            {/* SUPPORTING DESCRIPTION */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="text-base sm:text-lg text-stone-600 max-w-2xl font-normal leading-relaxed mb-8"
+              className="text-base sm:text-lg text-stone-600 max-w-xl font-normal leading-relaxed mb-8"
             >
               A joyful learning environment where curiosity grows, confidence shines and every child discovers the joy of learning.
             </motion.p>
 
-            {/* 4. PRIMARY ACTION BUTTONS */}
+            {/* PRIMARY ACTION BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 w-full sm:w-auto"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full sm:w-auto"
             >
               <button
                 onClick={() => onOpenComingSoon('Explore School Story')}
-                className="px-8 py-4 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 group"
+                className="px-8 py-4 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
                 <span>Explore School</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -137,7 +125,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
 
               <button
                 onClick={onOpenEnquiry}
-                className="px-8 py-4 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-sm border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-sm border-2 border-brand-gold/70 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4 text-brand-gold" />
                 <span>Admission Enquiry</span>
@@ -145,7 +133,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
 
               <button
                 onClick={onOpenPolicy}
-                className="px-6 py-4 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-sm border border-amber-300 shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-7 py-4 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-sm border border-amber-300 shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4 text-amber-600" />
                 <span>School Policies</span>
@@ -157,7 +145,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-3 gap-4 pt-8 mt-6 border-t border-amber-100/80 w-full max-w-lg"
+              className="grid grid-cols-3 gap-4 pt-8 mt-8 border-t border-stone-200/80 w-full max-w-lg"
             >
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-green">Play Home</span>
@@ -175,25 +163,24 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
 
           </div>
 
-          {/* Right Visual Image Composition */}
+          {/* Right Column: Asymmetric Layered Imagery */}
           <div className="lg:col-span-5 relative">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative mx-auto max-w-md lg:max-w-none"
             >
-              {/* Organic Frame Wrapper */}
-              <div className="relative rounded-[2.5rem] overflow-hidden p-3 bg-gradient-to-tr from-amber-200 via-emerald-100 to-sky-200 shadow-2xl">
+              <div className="relative rounded-[2.5rem] overflow-hidden p-3 bg-gradient-to-tr from-amber-200 via-emerald-100 to-sky-200 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
                 <img
                   src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80"
                   alt="Preschool children learning and playing joyfully"
-                  className="w-full h-[400px] sm:h-[480px] object-cover rounded-[2rem]"
+                  className="w-full h-[420px] sm:h-[500px] object-cover rounded-[2rem]"
                   data-cursor="VIEW"
                 />
                 
-                {/* Overlay Badge 1 */}
-                <div className="absolute top-8 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-stone-100 flex items-center gap-3 animate-float-slow">
+                {/* Floating Glass Badge 1 */}
+                <div className="absolute top-8 -left-4 sm:-left-6 bg-white/95 backdrop-blur-xl p-4 rounded-2xl shadow-2xl border border-stone-100 flex items-center gap-3 animate-float-slow">
                   <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-brand-gold">
                     <Smile className="w-6 h-6" />
                   </div>
@@ -203,8 +190,8 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
                   </div>
                 </div>
 
-                {/* Overlay Badge 2 */}
-                <div className="absolute -bottom-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-stone-100 flex items-center gap-3 animate-float-medium">
+                {/* Floating Glass Badge 2 */}
+                <div className="absolute -bottom-4 right-4 bg-white/95 backdrop-blur-xl p-4 rounded-2xl shadow-2xl border border-stone-100 flex items-center gap-3 animate-float-medium">
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-brand-green">
                     <Award className="w-6 h-6" />
                   </div>
@@ -215,7 +202,6 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
                 </div>
 
               </div>
-
             </motion.div>
           </div>
 
