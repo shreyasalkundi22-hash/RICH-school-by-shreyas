@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CustomCursor from './components/CustomCursor';
 import IntroAnimation from './components/IntroAnimation';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -13,6 +14,7 @@ import GallerySection from './components/GallerySection';
 import AdmissionsCTA from './components/AdmissionsCTA';
 import ContactSection from './components/ContactSection';
 import ComingSoonModal from './components/ComingSoonModal';
+import PolicyViewer from './components/PolicyViewer';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -21,6 +23,7 @@ export default function App() {
     isOpen: false,
     topic: ''
   });
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
   const handleOpenComingSoon = (topicTitle = 'Special Feature') => {
     setComingSoonModal({
@@ -34,6 +37,14 @@ export default function App() {
       isOpen: false,
       topic: ''
     });
+  };
+
+  const handleOpenPolicy = () => {
+    setIsPolicyOpen(true);
+  };
+
+  const handleClosePolicy = () => {
+    setIsPolicyOpen(false);
   };
 
   const handleOpenEnquiry = () => {
@@ -52,21 +63,26 @@ export default function App() {
   return (
     <div className="min-h-screen bg-brand-cream text-brand-dark relative font-sans selection:bg-brand-gold selection:text-white">
       
-      {/* 1. Fullscreen Intro Animation (Walker School Inspired Mask Reveal) */}
+      {/* Awwwards Desktop Custom Cursor */}
+      <CustomCursor />
+
+      {/* 1. Fullscreen Intro Animation */}
       <IntroAnimation key={replayKey} forceReplay={replayKey > 0} />
 
-      {/* 2. Header / Glass Navbar */}
+      {/* 2. Liquid Glass Header / Navbar */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}
         onOpenComingSoon={handleOpenComingSoon}
+        onOpenPolicy={handleOpenPolicy}
       />
 
       {/* Main Content Sections */}
       <main>
-        {/* 3. Hero Section */}
+        {/* 3. Cinematic Hero Section */}
         <HeroSection
           onOpenEnquiry={handleOpenEnquiry}
           onOpenComingSoon={handleOpenComingSoon}
+          onOpenPolicy={handleOpenPolicy}
         />
 
         {/* 4. Quick School Intro */}
@@ -82,7 +98,10 @@ export default function App() {
         <ActivitiesSection onOpenComingSoon={handleOpenComingSoon} />
 
         {/* 8. Editorial About School */}
-        <AboutSection onOpenComingSoon={handleOpenComingSoon} />
+        <AboutSection
+          onOpenComingSoon={handleOpenComingSoon}
+          onOpenPolicy={handleOpenPolicy}
+        />
 
         {/* 9. Facilities Section */}
         <FacilitiesSection onOpenComingSoon={handleOpenComingSoon} />
@@ -111,10 +130,17 @@ export default function App() {
         onOpenEnquiry={handleOpenEnquiry}
       />
 
-      {/* 15. Footer */}
+      {/* 15. Official Interactive School Policy Document Viewer */}
+      <PolicyViewer
+        isOpen={isPolicyOpen}
+        onClose={handleClosePolicy}
+      />
+
+      {/* 16. Multi-Column Footer */}
       <Footer
         onOpenComingSoon={handleOpenComingSoon}
         onReplayIntro={handleReplayIntro}
+        onOpenPolicy={handleOpenPolicy}
       />
 
     </div>

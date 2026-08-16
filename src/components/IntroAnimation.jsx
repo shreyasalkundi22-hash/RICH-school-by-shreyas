@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImg from '../assets/logo.jpg';
+import schoolLogoImg from '../assets/school_logo.jpg';
 
 export default function IntroAnimation({ forceReplay, onComplete }) {
   const [isVisible, setIsVisible] = useState(true);
@@ -62,12 +62,12 @@ export default function IntroAnimation({ forceReplay, onComplete }) {
             className="flex items-center gap-3"
           >
             <img 
-              src={logoImg} 
-              alt="Junior R.I.C.H. Logo" 
+              src={schoolLogoImg} 
+              alt="Jr. R.I.C.H. Logo" 
               className="w-10 h-10 object-contain rounded-lg bg-white p-1 shadow-md block"
             />
             <div className="text-xs uppercase tracking-widest text-[#E8D3A7] font-semibold">
-              Junior R.I.C.H. Pre-Primary
+              Jr. R.I.C.H. Pre-Primary
             </div>
           </motion.div>
 

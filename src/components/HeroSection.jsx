@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Sun, Heart, Star, Smile, Award } from 'lucide-react';
+import { Sparkles, ArrowRight, Sun, Heart, Star, Smile, Award, FileText, ShieldCheck } from 'lucide-react';
+import schoolLogoImg from '../assets/school_logo.jpg';
+import trustLogoImg from '../assets/trust_logo.jpg';
 
-export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
+export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }) {
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#FFFDF9] to-[#F4F9F2]">
       
@@ -42,12 +44,38 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
           {/* Left Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             
+            {/* OFFICIAL SCHOOL LOGO DISPLAYED AT THE STARTING BEFORE SCHOOL NAME */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-6 p-2.5 rounded-2xl bg-white/80 backdrop-blur-md shadow-sm border border-stone-200/80"
+            >
+              <img
+                src={schoolLogoImg}
+                alt="Jr. R.I.C.H. Official School Logo"
+                className="h-12 sm:h-14 w-auto object-contain bg-white rounded-xl p-1 shadow-sm"
+              />
+              <div className="h-10 w-px bg-stone-200 hidden sm:block" />
+              <div className="hidden sm:flex items-center gap-2">
+                <img
+                  src={trustLogoImg}
+                  alt="Param Jyoti Foundation"
+                  className="h-10 w-auto object-contain bg-white rounded-lg p-0.5"
+                />
+                <div className="text-left">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-brand-green block leading-tight">A Unit of</span>
+                  <span className="text-xs font-serif font-bold text-stone-800 block leading-tight">Param Jyoti Foundation</span>
+                </div>
+              </div>
+            </motion.div>
+
             {/* Admissions Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-5"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 shadow-sm mb-4"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-brand-leafGreen animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
@@ -55,14 +83,14 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               </span>
             </motion.div>
 
-            {/* 1. PRIMARY HERO HEADING: School Name with Distinctive New Font Style */}
+            {/* 1. PRIMARY HERO HEADING: School Name (Jr. R.I.C.H. Pre-Primary School) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
               className="font-outfit text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-dark leading-[1.15] mb-3"
             >
-              Junior R.I.C.H.{' '}
+              Jr. R.I.C.H.{' '}
               <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal">
                 Pre-Primary School
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-gold/40" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,22 +125,30 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto"
             >
               <button
                 onClick={() => onOpenComingSoon('Explore Our School')}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3 group"
+                className="px-7 py-3.5 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group"
               >
                 <span>Explore Our School</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 onClick={onOpenEnquiry}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-base border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-7 py-3.5 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-sm border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-5 h-5 text-brand-gold" />
+                <Sparkles className="w-4 h-4 text-brand-gold" />
                 <span>Admissions Enquiry</span>
+              </button>
+
+              <button
+                onClick={onOpenPolicy}
+                className="px-6 py-3.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-sm border border-amber-300 shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
+              >
+                <FileText className="w-4 h-4 text-amber-600" />
+                <span>School Policy</span>
               </button>
             </motion.div>
 
@@ -121,7 +157,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-3 gap-4 pt-10 mt-6 border-t border-amber-100/80 w-full max-w-lg"
+              className="grid grid-cols-3 gap-4 pt-8 mt-6 border-t border-amber-100/80 w-full max-w-lg"
             >
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-green">Play Home</span>
