@@ -104,7 +104,7 @@ export default function AboutSection({ onOpenComingSoon, onOpenPolicy }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-stone-800">Holistic Care</h4>
-                    <p className="text-xs text-stone-600 mt-0.5">Academics + Karate & Yoga</p>
+                    <p className="text-xs text-stone-600 mt-0.5">Academics + 6 Co-Curriculars</p>
                   </div>
                 </div>
 

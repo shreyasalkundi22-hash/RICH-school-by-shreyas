@@ -76,7 +76,7 @@ export default function AdmissionsCTA({ onOpenEnquiry, onOpenComingSoon }) {
             <CheckCircle2 className="w-4 h-4 text-amber-200" /> Montessori & Moral Ethics
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-amber-200" /> Karate & Yoga Integrated
+            <CheckCircle2 className="w-4 h-4 text-amber-200" /> 6 Co-Curricular Activities
           </span>
         </div>
 
