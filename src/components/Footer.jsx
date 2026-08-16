@@ -1,9 +1,12 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Navigation, Play, Heart, FileText, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Mail, Navigation, Play, Heart, FileText, Facebook, Instagram } from 'lucide-react';
 import schoolLogoImg from '../assets/school_logo.jpg';
 import trustLogoImg from '../assets/trust_logo.jpg';
 
 export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }) {
+  const facebookUrl = "https://www.facebook.com/share/14m6gKtMfFV/";
+  const instagramUrl = "https://www.instagram.com/";
+
   const links = [
     { name: 'Home', href: '#home' },
     { name: 'Our School', comingSoon: true, title: 'Our School Story' },
@@ -60,9 +63,32 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
               </div>
             </div>
 
-            <p className="text-emerald-100/70 text-sm leading-relaxed max-w-sm mt-2">
+            <p className="text-emerald-100/70 text-sm leading-relaxed max-w-sm mt-1">
               A joyful learning environment where curiosity grows, confidence shines and every child discovers the joy of learning. Rishabh Institute of Character Harvesting.
             </p>
+
+            {/* Social Logos */}
+            <div className="flex items-center gap-3 pt-1">
+              <span className="text-xs font-semibold text-stone-400">Follow Us:</span>
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-transform hover:scale-110 shadow-md"
+                title="Facebook Page"
+              >
+                <Facebook className="w-4 h-4 fill-current" />
+              </a>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 hover:opacity-90 text-white transition-transform hover:scale-110 shadow-md"
+                title="Instagram Page"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
 
             <div className="text-xs text-emerald-200/80 space-y-2 mt-2">
               <p className="flex items-start gap-2">
@@ -164,14 +190,21 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
 
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-200/60 font-medium">
+        {/* Bottom Copyright & Designer Credit */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-emerald-200/70 font-medium">
           <p>© Jr. R.I.C.H. Pre-Primary School (Param Jyoti Foundation Unit). All Rights Reserved.</p>
-          <p className="flex items-center gap-1">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
-            <span>for Hubballi’s Young Learners</span>
-          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-center md:text-right">
+            <p className="flex items-center gap-1">
+              <span>Crafted with</span>
+              <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
+              <span>for Hubballi’s Young Learners</span>
+            </p>
+            <span className="hidden sm:inline text-stone-500">•</span>
+            <p className="text-amber-300 font-serif italic font-semibold">
+              Where ideas meet pixels, designed by Shreyas Alkundi.
+            </p>
+          </div>
         </div>
 
       </div>

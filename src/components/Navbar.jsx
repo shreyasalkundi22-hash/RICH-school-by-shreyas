@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, Sparkles, Send, FileText } from 'lucide-react';
+import { Menu, X, Phone, Sparkles, Send, FileText, Facebook, Instagram } from 'lucide-react';
 import schoolLogoImg from '../assets/school_logo.jpg';
 import trustLogoImg from '../assets/trust_logo.jpg';
 
@@ -8,6 +8,9 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const facebookUrl = "https://www.facebook.com/share/14m6gKtMfFV/";
+  const instagramUrl = "https://www.instagram.com/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,33 +74,57 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
       >
         <div className="flex items-center justify-between gap-2 xl:gap-3 w-full">
           
-          {/* Brand Logo Container */}
-          <a href="#home" className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none shrink-0">
-            <div className="relative bg-white/95 p-1 sm:p-1.5 rounded-xl shadow-sm border border-white/90 group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 flex items-center gap-1.5">
-              <img
-                src={schoolLogoImg}
-                alt="Jr. R.I.C.H. School Logo"
-                className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg block"
-              />
-              <img
-                src={trustLogoImg}
-                alt="Param Jyoti Foundation Trust Logo"
-                title="Param Jyoti Foundation Unit"
-                className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg block border-l border-stone-200 pl-1.5 hidden sm:block"
-              />
-            </div>
-            
-            <div className="flex flex-col justify-center select-none shrink-0">
-              <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors leading-none whitespace-nowrap">
-                Jr. R.I.C.H.
-              </span>
-              <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-brand-gold tracking-wide uppercase leading-tight whitespace-nowrap mt-0.5">
-                PRE-PRIMARY SCHOOL
-              </span>
-            </div>
-          </a>
+          {/* Brand Logo Container + Social Icons at Start */}
+          <div className="flex items-center gap-2 shrink-0">
+            <a href="#home" className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none shrink-0">
+              <div className="relative bg-white/95 p-1 sm:p-1.5 rounded-xl shadow-sm border border-white/90 group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 flex items-center gap-1.5">
+                <img
+                  src={schoolLogoImg}
+                  alt="Jr. R.I.C.H. School Logo"
+                  className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg block"
+                />
+                <img
+                  src={trustLogoImg}
+                  alt="Param Jyoti Foundation Trust Logo"
+                  title="Param Jyoti Foundation Unit"
+                  className="h-8 sm:h-9 lg:h-10 w-auto object-contain rounded-lg block border-l border-stone-200 pl-1.5 hidden sm:block"
+                />
+              </div>
+              
+              <div className="flex flex-col justify-center select-none shrink-0">
+                <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors leading-none whitespace-nowrap">
+                  Jr. R.I.C.H.
+                </span>
+                <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-brand-gold tracking-wide uppercase leading-tight whitespace-nowrap mt-0.5">
+                  PRE-PRIMARY SCHOOL
+                </span>
+              </div>
+            </a>
 
-          {/* Desktop Nav Links with Animated Underline */}
+            {/* Social Logos at the Starting Header */}
+            <div className="flex items-center gap-1.5 border-l border-stone-300/60 pl-2 shrink-0">
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-full bg-white/80 hover:bg-blue-600 hover:text-white text-blue-600 border border-white shadow-sm transition-all duration-200"
+                title="Official Facebook Page"
+              >
+                <Facebook className="w-4 h-4 fill-current" />
+              </a>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-full bg-white/80 hover:bg-pink-600 hover:text-white text-pink-600 border border-white shadow-sm transition-all duration-200"
+                title="Official Instagram Page"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop Nav Links */}
           <nav className="hidden xl:flex items-center justify-center gap-0.5 2xl:gap-1.5 shrink">
             {navLinks.map((link) => (
               <a
@@ -110,13 +137,12 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
                 {link.comingSoon && (
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse shrink-0" title="Coming Soon" />
                 )}
-                {/* Animated Hover Underline Indicator */}
                 <span className="absolute bottom-0 left-2.5 right-2.5 h-0.5 bg-brand-green scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
               </a>
             ))}
           </nav>
 
-          {/* Right Action Button - Premium Floating Liquid CTA */}
+          {/* Right Action Button */}
           <div className="hidden xl:flex items-center gap-2 shrink-0">
             <button
               onClick={onOpenPolicy}
@@ -136,7 +162,7 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
             </button>
           </div>
 
-          {/* Mobile & Tablet Hamburger Actions */}
+          {/* Mobile Hamburger Button */}
           <div className="flex xl:hidden items-center gap-2 shrink-0">
             <button
               onClick={onOpenEnquiry}
@@ -167,6 +193,30 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
               className="xl:hidden rounded-2xl bg-white/90 backdrop-blur-2xl border border-white/80 shadow-2xl overflow-hidden"
             >
               <div className="p-4 flex flex-col gap-1">
+                
+                {/* Social Links inside Mobile Drawer */}
+                <div className="flex items-center justify-between px-3 py-2 bg-stone-100/80 rounded-xl mb-1">
+                  <span className="text-xs font-bold text-stone-600">Connect with Us:</span>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-full bg-blue-600 text-white shadow-sm"
+                    >
+                      <Facebook className="w-3.5 h-3.5 fill-current" />
+                    </a>
+                    <a
+                      href={instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-full bg-pink-600 text-white shadow-sm"
+                    >
+                      <Instagram className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
