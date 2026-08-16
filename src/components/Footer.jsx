@@ -191,17 +191,16 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
         </div>
 
         {/* Bottom Copyright & Designer Credit */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-emerald-200/70 font-medium">
+        <div className="pt-8 flex flex-col items-center justify-center gap-3 text-center text-xs text-emerald-200/70 font-medium">
           <p>© Jr. R.I.C.H. Pre-Primary School (Param Jyoti Foundation Unit). All Rights Reserved.</p>
           
-          <div className="flex flex-col sm:flex-row items-center gap-2 text-center md:text-right">
-            <p className="flex items-center gap-1">
+          <div className="flex flex-col items-center justify-center gap-1 text-center">
+            <p className="flex items-center justify-center gap-1 text-emerald-200/70 text-xs font-medium whitespace-nowrap">
               <span>Crafted with</span>
-              <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
+              <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400 inline" />
               <span>for Hubballi’s Young Learners</span>
             </p>
-            <span className="hidden sm:inline text-stone-500">•</span>
-            <p className="text-amber-300 font-serif italic font-semibold">
+            <p className="text-emerald-200/70 text-xs font-medium text-center">
               Where ideas meet pixels, designed by Shreyas Alkundi.
             </p>
           </div>
