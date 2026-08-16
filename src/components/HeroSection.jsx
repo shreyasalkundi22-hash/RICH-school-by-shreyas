@@ -83,7 +83,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               </span>
             </motion.div>
 
-            {/* 1. PRIMARY HERO HEADING: School Name (Jr. R.I.C.H. Pre-Primary School) */}
+            {/* 1. PRIMARY HERO HEADING: School Name */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               </span>
             </motion.h1>
 
-            {/* 2. TAGLINE: Added right below the school name in small size */}
+            {/* 2. TAGLINE */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,35 +120,35 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               A joyful learning environment where curiosity grows, confidence shines and every child discovers the joy of learning.
             </motion.p>
 
-            {/* 4. ACTION BUTTONS */}
+            {/* 4. PRIMARY ACTION BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 w-full sm:w-auto"
             >
               <button
-                onClick={() => onOpenComingSoon('Explore Our School')}
-                className="px-7 py-3.5 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group"
+                onClick={() => onOpenComingSoon('Explore School Story')}
+                className="px-8 py-4 rounded-full bg-brand-green hover:bg-emerald-800 text-white font-bold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 group"
               >
-                <span>Explore Our School</span>
+                <span>Explore School</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 onClick={onOpenEnquiry}
-                className="px-7 py-3.5 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-sm border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full bg-white hover:bg-amber-50 text-brand-dark font-bold text-sm border-2 border-brand-gold/60 shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4 text-brand-gold" />
-                <span>Admissions Enquiry</span>
+                <span>Admission Enquiry</span>
               </button>
 
               <button
                 onClick={onOpenPolicy}
-                className="px-6 py-3.5 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-sm border border-amber-300 shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-6 py-4 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-sm border border-amber-300 shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4 text-amber-600" />
-                <span>School Policy</span>
+                <span>School Policies</span>
               </button>
             </motion.div>
 
@@ -189,6 +189,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
                   src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80"
                   alt="Preschool children learning and playing joyfully"
                   className="w-full h-[400px] sm:h-[480px] object-cover rounded-[2rem]"
+                  data-cursor="VIEW"
                 />
                 
                 {/* Overlay Badge 1 */}

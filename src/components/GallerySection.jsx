@@ -1,74 +1,177 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Camera, Image as ImageIcon, Sparkles, Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Image, ChevronLeft, ChevronRight, X, Sparkles } from 'lucide-react';
 
 export default function GallerySection({ onOpenComingSoon }) {
-  const sampleCategories = ['All Moments', 'Classroom Learning', 'Karate & Yoga', 'Art & Craft', 'Celebrations'];
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const galleryItems = [
+    {
+      id: 1,
+      title: 'Montessori Practical Exploration',
+      category: 'Activities',
+      img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80',
+      span: 'lg:col-span-8 h-80',
+    },
+    {
+      id: 2,
+      title: 'Classroom Storytelling Session',
+      category: 'Learning',
+      img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80',
+      span: 'lg:col-span-4 h-80',
+    },
+    {
+      id: 3,
+      title: 'Karate & Physical Training',
+      category: 'Sports',
+      img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80',
+      span: 'lg:col-span-4 h-80',
+    },
+    {
+      id: 4,
+      title: 'Art & Creative Craft Workshop',
+      category: 'Activities',
+      img: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80',
+      span: 'lg:col-span-8 h-80',
+    },
+  ];
+
+  const filteredItems = activeFilter === 'All'
+    ? galleryItems
+    : galleryItems.filter(item => item.category === activeFilter);
+
+  const handleNext = () => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((lightboxIndex + 1) % filteredItems.length);
+    }
+  };
+
+  const handlePrev = () => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((lightboxIndex - 1 + filteredItems.length) % filteredItems.length);
+    }
+  };
 
   return (
-    <section id="gallery" className="py-24 bg-brand-cream relative overflow-hidden">
+    <section id="gallery" className="py-24 bg-white relative overflow-hidden">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider inline-block mb-3">
-              Campus Moments
-            </span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <Image className="w-3.5 h-3.5" />
+              <span>Campus Memories</span>
+            </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark tracking-tight">
-              School Gallery
+              Photo Showcase
             </h2>
-            <p className="text-stone-600 text-base sm:text-lg mt-3">
-              Capturing milestones of discovery, friendship, and achievements.
-            </p>
-          </motion.div>
+          </div>
+
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-2">
+            {['All', 'Activities', 'Learning', 'Sports'].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                  activeFilter === cat
+                    ? 'bg-brand-green text-white shadow-md'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Category Pill Tabs Preview */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
-          {sampleCategories.map((cat, i) => (
-            <button
-              key={cat}
-              onClick={() => onOpenComingSoon(`Gallery Category: ${cat}`)}
-              className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${
-                i === 0
-                  ? 'bg-brand-green text-white shadow-md'
-                  : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
-              }`}
+        {/* Masonry Editorial Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {filteredItems.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              onClick={() => setLightboxIndex(idx)}
+              className={`relative rounded-3xl overflow-hidden shadow-xl border border-stone-200 cursor-pointer group ${item.span}`}
+              data-cursor="OPEN"
             >
-              {cat}
-            </button>
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
+
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
+                <span className="text-[10px] font-mono font-bold uppercase text-amber-300 tracking-wider block">
+                  {item.category}
+                </span>
+                <h3 className="font-serif text-lg font-bold">{item.title}</h3>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Masonry Grid Placeholder Experience */}
-        <div className="relative rounded-3xl p-8 sm:p-12 bg-white/70 backdrop-blur-md border-2 border-dashed border-amber-200 text-center shadow-lg">
-          
-          <div className="w-16 h-16 rounded-2xl bg-amber-100 text-brand-gold flex items-center justify-center mx-auto mb-6">
-            <Camera className="w-8 h-8" />
-          </div>
-
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-dark mb-3">
-            Our School Gallery is Coming Soon
-          </h3>
-
-          <p className="text-stone-600 text-sm sm:text-base max-w-xl mx-auto mb-6">
-            We are curating official photography of our campus, classrooms, activities, and celebrations. Check back soon for our full interactive photo & video showcase.
-          </p>
-
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold">
-            <Sparkles className="w-4 h-4 text-brand-gold animate-spin-slow" />
-            <span>Grid • Masonry • Lightbox Views Prepared</span>
-          </div>
-
-        </div>
-
       </div>
+
+      {/* Full-screen Lightbox Overlay */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-stone-950/90 backdrop-blur-xl flex flex-col items-center justify-between p-6"
+          >
+            <div className="w-full max-w-5xl flex items-center justify-between text-white z-10">
+              <span className="font-serif font-bold text-lg text-amber-300">
+                {filteredItems[lightboxIndex].title}
+              </span>
+              <button
+                onClick={() => setLightboxIndex(null)}
+                className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="my-auto max-w-4xl max-h-[80vh] flex items-center justify-center">
+              <img
+                src={filteredItems[lightboxIndex].img}
+                alt={filteredItems[lightboxIndex].title}
+                className="max-h-[75vh] w-auto object-contain rounded-2xl shadow-2xl"
+              />
+            </div>
+
+            <div className="flex items-center gap-4 text-white text-xs font-bold z-10">
+              <button
+                onClick={handlePrev}
+                className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>Prev</span>
+              </button>
+              <span className="font-mono text-amber-400">
+                {lightboxIndex + 1} / {filteredItems.length}
+              </span>
+              <button
+                onClick={handleNext}
+                className="px-4 py-2 rounded-full bg-brand-green hover:bg-emerald-800 transition-colors flex items-center gap-1"
+              >
+                <span>Next</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }

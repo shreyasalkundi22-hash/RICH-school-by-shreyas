@@ -1,143 +1,191 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Baby, Smile, BookOpen, GraduationCap, Shapes, Sparkles, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpRight, Sparkles, BookOpen, Heart, CheckCircle2 } from 'lucide-react';
 
 export default function ProgramsSection({ onOpenComingSoon }) {
+  const [activeProgram, setActiveProgram] = useState(0);
+
   const programs = [
     {
-      name: 'Play Home',
-      icon: Baby,
-      age: '2 - 3 Years',
-      color: 'from-amber-400 to-amber-500',
-      badgeBg: 'bg-amber-100 text-amber-800',
-      description: 'Sensory exploration, social interplay, and playful motor skill development in a gentle, warm setting.',
+      num: '01',
+      title: 'Play Home',
+      subtitle: 'Early Exploration & Joyful Discovery',
+      age: '2 – 3 Years',
+      img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80',
+      description: 'A gentle introduction to learning through tactile play, sensory discovery, music, and motor development in a safe, loving environment.',
+      highlights: ['Tactile Play & Craft', 'Social Interaction', 'Music & Rhymes', 'Safe Environment']
     },
     {
-      name: 'Nursery',
-      icon: Smile,
-      age: '3 - 4 Years',
-      color: 'from-emerald-400 to-emerald-600',
-      badgeBg: 'bg-emerald-100 text-emerald-800',
-      description: 'Building early language skills, creative arts, active listening, and basic numerical concepts through play.',
+      num: '02',
+      title: 'Nursery',
+      subtitle: 'Foundational Communication & Social Skills',
+      age: '3 – 4 Years',
+      img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80',
+      description: 'Fostering language development, early phonetics, vocabulary expansion, curiosity, and creative expression.',
+      highlights: ['Phonetics & Reading', 'Creative Drawing', 'Storytelling', 'Group Activities']
     },
     {
-      name: 'L.K.G.',
-      icon: BookOpen,
-      age: '4 - 5 Years',
-      color: 'from-sky-400 to-blue-600',
-      badgeBg: 'bg-sky-100 text-sky-800',
-      description: 'Phonics foundation, guided reading readiness, early math blocks, and expressive storytelling.',
+      num: '03',
+      title: 'L.K.G. (Lower Kindergarten)',
+      subtitle: 'Cognitive Growth & Pre-Writing Skills',
+      age: '4 – 5 Years',
+      img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
+      description: 'Developing reading readiness, number concepts, fine motor precision, and structured interactive learning routines.',
+      highlights: ['Pre-Writing Drills', 'Number Concepts', 'Environmental Studies', 'Confidence Building']
     },
     {
-      name: 'U.K.G.',
-      icon: GraduationCap,
-      age: '5 - 6 Years',
-      color: 'from-orange-400 to-rose-500',
-      badgeBg: 'bg-orange-100 text-orange-800',
-      description: 'Strengthening literacy, problem-solving confidence, logical reasoning, and structured daily routines.',
+      num: '04',
+      title: 'U.K.G. (Upper Kindergarten)',
+      subtitle: 'Primary Readiness & Independent Problem Solving',
+      age: '5 – 6 Years',
+      img: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80',
+      description: 'Preparing children for formal primary schooling with fluent reading, basic math, logical reasoning, and teamwork.',
+      highlights: ['Fluent Phonics', 'Addition Basics', 'Science Experiments', 'Primary Transition']
     },
     {
-      name: 'Montessori',
-      icon: Shapes,
-      age: 'Child-Centered',
-      color: 'from-purple-400 to-indigo-600',
-      badgeBg: 'bg-purple-100 text-purple-800',
-      description: 'Self-directed learning materials, tactile exploration, independent problem solving, and focused discovery.',
+      num: '05',
+      title: 'Montessori Curriculum',
+      subtitle: 'Self-Directed Learning & Practical Life Skills',
+      age: '2 – 6 Years',
+      img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80',
+      description: 'Specially designed Montessori apparatus guiding children to master self-correction, concentration, and practical life skills.',
+      highlights: ['Practical Life Tools', 'Sensorial Materials', 'Self-Correction', 'Concentration Drills']
     },
     {
-      name: 'Primary (Up to 4th Standard)',
-      icon: Sparkles,
-      age: 'Grades 1st to 4th',
-      color: 'from-teal-400 to-emerald-700',
-      badgeBg: 'bg-teal-100 text-teal-800',
-      description: 'Comprehensive academic grounding combined with physical education, karate, yoga, and character building.',
-    },
+      num: '06',
+      title: 'Primary (Up to 4th Std)',
+      subtitle: 'Comprehensive Academic Excellence & Ethics',
+      age: '6 – 10 Years',
+      img: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80',
+      description: 'Rigorous primary academic curriculum coupled with moral character harvesting, Karate, Yoga, and analytical thinking.',
+      highlights: ['Core Subjects Mastery', 'Karate & Physical Ed', 'Moral Ethics', 'Leadership Skills']
+    }
   ];
 
   return (
-    <section id="programs" className="py-24 bg-white relative overflow-hidden">
+    <section id="programs" className="py-24 bg-[#FAF8F5] relative overflow-hidden">
       
-      {/* Subtle Background Accent */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
-            <span className="px-3.5 py-1.5 rounded-full bg-amber-100/80 text-amber-900 text-xs font-bold uppercase tracking-wider inline-block mb-3">
-              Academic Levels & Care
-            </span>
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-mono font-bold uppercase tracking-wider mb-3">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Academic Programs</span>
+            </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark tracking-tight">
-              Learning That Grows With Them
+              Learning Pathways
             </h2>
-            <p className="text-stone-600 text-base sm:text-lg mt-3">
-              From early toddler curiosity to foundational primary grades, our tailored environments foster confidence at every step.
-            </p>
-          </motion.div>
+          </div>
 
-          <button
-            onClick={() => onOpenComingSoon('Full Curriculum & Syllabus')}
-            className="self-start md:self-auto px-6 py-3 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2"
-          >
-            <span>Curriculum Details</span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          <p className="text-stone-600 text-sm sm:text-base max-w-md">
+            Hover or click on any program below to reveal detailed curriculum highlights and age-specific learning objectives.
+          </p>
         </div>
 
-        {/* 6 Program Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => {
-            const Icon = program.icon;
-            return (
+        {/* Magazine-style Split Accordion Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Interactive Program List */}
+          <div className="lg:col-span-6 space-y-3">
+            {programs.map((prog, idx) => (
               <motion.div
-                key={program.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                onClick={() => onOpenComingSoon(`${program.name} Program Details`)}
-                className="group cursor-pointer bg-stone-50/70 hover:bg-white rounded-3xl p-7 border-2 border-stone-100 hover:border-amber-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                key={prog.num}
+                onClick={() => setActiveProgram(idx)}
+                onMouseEnter={() => setActiveProgram(idx)}
+                className={`p-5 sm:p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                  activeProgram === idx
+                    ? 'bg-white border-brand-gold shadow-xl scale-[1.01]'
+                    : 'bg-white/60 border-stone-200 hover:bg-white hover:border-amber-300'
+                }`}
               >
-                <div>
-                  {/* Icon Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${program.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-7 h-7" />
-                    </div>
-
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${program.badgeBg}`}>
-                      {program.age}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <span className={`font-mono text-xl sm:text-2xl font-bold ${
+                      activeProgram === idx ? 'text-brand-gold' : 'text-stone-400'
+                    }`}>
+                      {prog.num}
                     </span>
+                    <div>
+                      <h3 className="font-serif font-bold text-lg sm:text-xl text-stone-900">
+                        {prog.title}
+                      </h3>
+                      <p className="text-xs text-stone-500 font-medium mt-0.5">{prog.subtitle}</p>
+                    </div>
                   </div>
 
-                  {/* Name */}
-                  <h3 className="font-serif text-2xl font-bold text-brand-dark group-hover:text-brand-green transition-colors mb-3">
-                    {program.name}
-                  </h3>
+                  <span className={`p-2 rounded-full transition-transform ${
+                    activeProgram === idx ? 'bg-brand-gold text-stone-900 rotate-45' : 'bg-stone-100 text-stone-600'
+                  }`}>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-                  {/* Description */}
-                  <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                    {program.description}
+          {/* Right Column: Active Program Magazine Reveal Tile */}
+          <div className="lg:col-span-6 sticky top-28">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProgram}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4 }}
+                className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-stone-200 space-y-6"
+              >
+                <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src={programs[activeProgram].img}
+                    alt={programs[activeProgram].title}
+                    className="w-full h-full object-cover"
+                    data-cursor="VIEW"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-bold text-stone-900 shadow-md">
+                    Age: {programs[activeProgram].age}
+                  </div>
+                </div>
+
+                <div>
+                  <span className="text-xs font-bold font-mono text-brand-gold uppercase tracking-wider block mb-1">
+                    Program {programs[activeProgram].num} Showcase
+                  </span>
+                  <h3 className="font-serif text-2xl font-bold text-stone-900 mb-2">
+                    {programs[activeProgram].title}
+                  </h3>
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+                    {programs[activeProgram].description}
                   </p>
                 </div>
 
-                {/* Coming Soon / More Info Notice */}
-                <div className="pt-4 border-t border-stone-200/60 flex items-center justify-between text-xs font-semibold text-stone-500 group-hover:text-brand-green transition-colors">
-                  <span>More information coming soon</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Key Highlights */}
+                <div className="space-y-2 pt-3 border-t border-stone-100">
+                  <span className="text-xs font-bold text-stone-800 uppercase tracking-wider block">
+                    Curriculum Highlights:
+                  </span>
+                  <div className="grid grid-cols-2 gap-2">
+                    {programs[activeProgram].highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-1.5 text-xs text-stone-700 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand-green shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+
+                <button
+                  onClick={() => onOpenComingSoon(`${programs[activeProgram].title} Full Syllabus & Timetable`)}
+                  className="w-full py-3 rounded-xl bg-stone-900 hover:bg-brand-green text-white font-bold text-xs shadow-md transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Explore Syllabus Details</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
               </motion.div>
-            );
-          })}
+            </AnimatePresence>
+          </div>
+
         </div>
 
       </div>
