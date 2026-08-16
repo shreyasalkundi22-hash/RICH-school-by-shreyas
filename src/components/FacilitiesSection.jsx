@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building, ShieldCheck } from 'lucide-react';
+import { Building, ShieldCheck, Smile, Sparkles } from 'lucide-react';
 
 export default function FacilitiesSection({ onOpenComingSoon }) {
   const facilities = [
@@ -17,13 +17,13 @@ export default function FacilitiesSection({ onOpenComingSoon }) {
       span: 'lg:col-span-5 h-80 sm:h-96',
     },
     {
-      title: 'Aqua-Guard Purified Drinking Water',
-      category: 'Hygienic Hydration Station',
-      img: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=1000&q=80',
+      title: 'Comfortable & Cozy Playgrounds',
+      category: 'Child-Safe Outdoor Play & Recreation',
+      img: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1000&q=80',
       span: 'lg:col-span-5 h-80 sm:h-96',
     },
     {
-      title: 'Karate & Yoga Training Studio',
+      title: 'Karate, Yoga & Activity Studio',
       category: 'Physical Education & Discipline',
       img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80',
       span: 'lg:col-span-7 h-80 sm:h-96',
@@ -48,7 +48,7 @@ export default function FacilitiesSection({ onOpenComingSoon }) {
           </div>
 
           <p className="text-emerald-100/70 text-sm sm:text-base max-w-md">
-            Safe, clean, and stimulating campus facilities designed to support physical health, safety, and cognitive exploration.
+            Comfortable playgrounds, CCTV security, Montessori materials, and activity studios designed to support physical health, safety, and cognitive exploration.
           </p>
         </div>
 

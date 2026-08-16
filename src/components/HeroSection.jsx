@@ -152,8 +152,8 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
                 <span className="text-xs text-stone-500 font-medium">To 4th Standard</span>
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-gold">Karate & Yoga</span>
-                <span className="text-xs text-stone-500 font-medium">Co-Curricular</span>
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-gold">6 Activities</span>
+                <span className="text-xs text-stone-500 font-medium">Karate, Yoga & Music</span>
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-blue">Montessori</span>
