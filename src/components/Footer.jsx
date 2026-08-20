@@ -54,7 +54,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
               </div>
 
               <div className="flex flex-col">
-                <span className="font-syne font-extrabold text-xl tracking-tight text-white">
+                <span className="font-cinzel font-extrabold text-xl tracking-widest text-white">
                   JR. RICH
                 </span>
                 <span className="text-xs font-semibold text-brand-gold tracking-widest uppercase">

@@ -81,7 +81,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[0.98] mb-4"
             >
-              <span className="font-syne font-extrabold tracking-tight text-brand-dark drop-shadow-sm">
+              <span className="font-cinzel font-extrabold tracking-widest text-stone-900 drop-shadow-md">
                 JR. RICH
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal text-3xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-normal mt-2">
