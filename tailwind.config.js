@@ -27,6 +27,10 @@ export default {
         playfair: ['Playfair Display', 'serif'],
         outfit: ['Outfit', 'sans-serif'],
         dmserif: ['DM Serif Display', 'serif'],
+        syne: ['Syne', 'sans-serif'],
+        cinzel: ['Cinzel', 'serif'],
+        cormorant: ['Cormorant Garamond', 'serif'],
+        bricolage: ['Bricolage Grotesque', 'sans-serif'],
         sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       borderRadius: {
