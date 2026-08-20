@@ -60,7 +60,7 @@ export default function AboutSection({ onOpenComingSoon, onOpenPolicy }) {
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider inline-block">
-                  About Jr. R.I.C.H.
+                  About JR. RICH SCHOOL
                 </span>
                 <span className="px-3 py-1 rounded-full bg-emerald-100 text-brand-green text-xs font-mono font-bold uppercase">
                   Moral Ethics + Modern Education
@@ -72,7 +72,7 @@ export default function AboutSection({ onOpenComingSoon, onOpenPolicy }) {
               </h2>
 
               <p className="text-stone-600 text-base sm:text-lg leading-relaxed mb-8">
-                <strong>Jr. R.I.C.H. Pre-Primary School</strong> (Rishabh Institute of Character Harvesting) provides a warm, stimulating learning community where every child receives attentive guidance to flourish academically, socially, and physically under the stewardship of the <strong>Param Jyoti Foundation</strong>.
+                <strong>JR. RICH SCHOOL</strong> (Rishabh Institute of Character Harvesting) provides a warm, stimulating learning community where every child receives attentive guidance to flourish academically, socially, and physically under the stewardship of the <strong>Param Jyoti Foundation</strong>.
               </p>
 
               {/* Verified Details Grid */}
@@ -94,7 +94,7 @@ export default function AboutSection({ onOpenComingSoon, onOpenPolicy }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-stone-800">Grades Offered</h4>
-                    <p className="text-xs text-stone-600 mt-0.5">Play Home to 4th Std (Montessori + Primary)</p>
+                    <p className="text-xs text-stone-600 mt-0.5">Pre Nursery to 4th Std (Primary 1st to 4th Std)</p>
                   </div>
                 </div>
 

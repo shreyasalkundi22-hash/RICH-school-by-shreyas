@@ -96,12 +96,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-stone-900">Phone Contact</h4>
-                    <div className="flex flex-wrap gap-2 mt-1 font-semibold text-brand-green">
-                      <a href="tel:+919972477742" className="hover:underline">+91 9972477742</a>
-                      <span>•</span>
-                      <a href="tel:+917019497751" className="hover:underline">+91 7019497751</a>
-                    </div>
-                    <a href="tel:+917676997407" className="block hover:underline font-semibold text-brand-green mt-1">
+                    <a href="tel:+917676997407" className="block hover:underline font-semibold text-brand-green mt-1 text-sm sm:text-base">
                       +91 7676997407
                     </a>
                   </div>
@@ -125,7 +120,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-stone-900">School Hours</h4>
-                    <p className="text-stone-600 mt-1">Monday – Friday: 9:00 AM – 3:30 PM</p>
+                    <p className="text-stone-600 mt-1">Monday – Friday: 9:00 AM – 3:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -167,7 +162,7 @@ export default function ContactSection() {
                         childName: '',
                         phone: '',
                         email: '',
-                        program: 'Play Home',
+                        program: 'Pre Nursery',
                         message: ''
                       });
                     }}
@@ -221,7 +216,7 @@ export default function ContactSection() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+91 9972477742"
+                        placeholder="+91 7676997407"
                         className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-amber-200 transition-all"
                       />
                     </div>
@@ -251,11 +246,10 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-stone-900 text-sm focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-amber-200 transition-all"
                     >
-                      <option value="Play Home">Play Home (2 - 3 Years)</option>
+                      <option value="Pre Nursery">Pre Nursery (2 - 3 Years)</option>
                       <option value="Nursery">Nursery (3 - 4 Years)</option>
                       <option value="LKG">L.K.G. (4 - 5 Years)</option>
                       <option value="UKG">U.K.G. (5 - 6 Years)</option>
-                      <option value="Montessori">Montessori Curriculum</option>
                       <option value="Primary 1st to 4th Std">Primary (1st to 4th Std)</option>
                     </select>
                   </div>

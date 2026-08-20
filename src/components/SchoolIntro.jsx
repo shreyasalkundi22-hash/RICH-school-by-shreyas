@@ -32,7 +32,7 @@ export default function SchoolIntro() {
             </h2>
 
             <p className="text-stone-400 text-base sm:text-lg leading-relaxed max-w-xl">
-              At <strong>Jr. R.I.C.H. Pre-Primary School</strong>, early childhood education goes beyond memorization. We craft immersive environments where play, Montessori discovery, moral values, and physical activity flourish together.
+              At <strong>JR. RICH SCHOOL</strong>, early childhood education goes beyond memorization. We craft immersive environments where play, foundational discovery, moral values, and physical activity flourish together.
             </p>
           </motion.div>
 
@@ -68,9 +68,9 @@ export default function SchoolIntro() {
               <div className="w-12 h-12 rounded-2xl bg-sky-400/20 flex items-center justify-center text-sky-300">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="font-serif font-bold text-xl text-white">Montessori Method</h3>
+              <h3 className="font-serif font-bold text-xl text-white">Early Learning</h3>
               <p className="text-xs text-stone-400 leading-relaxed">
-                Hands-on sensory exploration fostering independent problem-solving skills.
+                Hands-on foundational exploration fostering independent problem-solving skills.
               </p>
             </div>
 

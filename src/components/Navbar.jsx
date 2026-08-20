@@ -92,11 +92,11 @@ export default function Navbar({ onOpenEnquiry, onOpenComingSoon, onOpenPolicy }
               </div>
               
               <div className="flex flex-col justify-center select-none shrink-0">
-                <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors leading-none whitespace-nowrap">
-                  Jr. R.I.C.H.
+                <span className="font-playfair font-black text-sm sm:text-base lg:text-lg tracking-tight text-brand-dark group-hover:text-brand-green transition-colors leading-none whitespace-nowrap">
+                  JR. RICH
                 </span>
-                <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-brand-gold tracking-wide uppercase leading-tight whitespace-nowrap mt-0.5">
-                  PRE-PRIMARY SCHOOL
+                <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-brand-gold tracking-widest uppercase leading-tight whitespace-nowrap mt-0.5">
+                  SCHOOL
                 </span>
               </div>
             </a>

@@ -54,11 +54,11 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
               </div>
 
               <div className="flex flex-col">
-                <span className="font-serif text-xl font-bold tracking-tight text-white">
-                  Jr. R.I.C.H.
+                <span className="font-playfair font-black text-xl tracking-tight text-white">
+                  JR. RICH
                 </span>
                 <span className="text-xs font-semibold text-brand-gold tracking-widest uppercase">
-                  Pre-Primary School
+                  SCHOOL
                 </span>
               </div>
             </div>
@@ -147,16 +147,7 @@ export default function Footer({ onOpenComingSoon, onReplayIntro, onOpenPolicy }
             <div className="space-y-3 text-xs text-emerald-100/80 mb-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-gold" />
-                <div className="flex flex-wrap gap-2 font-mono font-semibold">
-                  <a href="tel:+919972477742" className="hover:text-white underline">+91 9972477742</a>
-                  <span>•</span>
-                  <a href="tel:+917019497751" className="hover:text-white underline">+91 7019497751</a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-brand-gold" />
-                <a href="tel:+917676997407" className="hover:text-white underline font-mono font-semibold">+91 7676997407</a>
+                <a href="tel:+917676997407" className="hover:text-white underline font-mono font-semibold text-sm">+91 7676997407</a>
               </div>
 
               <div className="flex items-center gap-2">

@@ -8,7 +8,7 @@ export default function ProgramsSection({ onOpenComingSoon }) {
   const programs = [
     {
       num: '01',
-      title: 'Play Home',
+      title: 'Pre Nursery',
       subtitle: 'Early Exploration & Joyful Discovery',
       age: '2 – 3 Years',
       img: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=80',
@@ -44,20 +44,11 @@ export default function ProgramsSection({ onOpenComingSoon }) {
     },
     {
       num: '05',
-      title: 'Montessori Curriculum',
-      subtitle: 'Self-Directed Learning & Practical Life Skills',
-      age: '2 – 6 Years',
-      img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80',
-      description: 'Specially designed Montessori apparatus guiding children to master self-correction, concentration, and practical life skills.',
-      highlights: ['Practical Life Tools', 'Sensorial Materials', 'Self-Correction', 'Concentration Drills']
-    },
-    {
-      num: '06',
-      title: 'Primary (Up to 4th Std)',
+      title: 'Primary (1st to 4th Std)',
       subtitle: 'Comprehensive Academic Excellence & Ethics',
       age: '6 – 10 Years',
       img: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80',
-      description: 'Rigorous primary academic curriculum coupled with moral character harvesting, Karate, Yoga, and analytical thinking.',
+      description: 'Rigorous primary academic curriculum coupled with moral character harvesting, Karate, Yoga, Music, and analytical thinking.',
       highlights: ['Core Subjects Mastery', 'Karate & Physical Ed', 'Moral Ethics', 'Leadership Skills']
     }
   ];

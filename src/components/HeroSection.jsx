@@ -79,11 +79,13 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="font-outfit text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-extrabold tracking-tight text-brand-dark leading-[0.98] mb-4"
+              className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[0.98] mb-4"
             >
-              Jr. R.I.C.H.
+              <span className="font-playfair font-black tracking-tight text-brand-dark drop-shadow-sm">
+                JR. RICH
+              </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-600 to-brand-orange font-dmserif italic font-normal text-3xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-normal mt-2">
-                Pre-Primary School
+                SCHOOL
               </span>
             </motion.h1>
 
@@ -148,7 +150,7 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
               className="grid grid-cols-3 gap-4 pt-8 mt-8 border-t border-stone-200/80 w-full max-w-lg"
             >
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-green">Play Home</span>
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-green">Pre Nursery</span>
                 <span className="text-xs text-stone-500 font-medium">To 4th Standard</span>
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -156,8 +158,8 @@ export default function HeroSection({ onOpenEnquiry, onOpenComingSoon, onOpenPol
                 <span className="text-xs text-stone-500 font-medium">Karate, Yoga & Music</span>
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-blue">Montessori</span>
-                <span className="text-xs text-stone-500 font-medium">Curriculum</span>
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-brand-blue">Primary</span>
+                <span className="text-xs text-stone-500 font-medium">1st to 4th Std</span>
               </div>
             </motion.div>
 

@@ -19,7 +19,7 @@ export default function FacultySection({ onOpenComingSoon }) {
           </h2>
 
           <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-            Trained in early childhood pedagogy, Montessori presentations, and gentle student guidance to ensure every child thrives in a caring environment.
+            Trained in early childhood pedagogy, foundational learning presentations, and gentle student guidance to ensure every child thrives in a caring environment.
           </p>
         </div>
 
@@ -34,10 +34,10 @@ export default function FacultySection({ onOpenComingSoon }) {
               <Heart className="w-12 h-12" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-xl text-stone-900">Pre-Primary Educators</h3>
-              <p className="text-xs text-brand-green font-semibold mt-1">Montessori & Play Home Specialists</p>
+              <h3 className="font-serif font-bold text-xl text-stone-900">Pre Nursery & Nursery Staff</h3>
+              <p className="text-xs text-brand-green font-semibold mt-1">Pre Nursery, Nursery, LKG & UKG Specialists</p>
             </div>
-            <p className="text-xs text-stone-500 leading-relaxed">Trained in phonetics, child psychology, and sensory materials presentation.</p>
+            <p className="text-xs text-stone-500 leading-relaxed">Trained in phonetics, child psychology, and interactive learning presentations.</p>
           </div>
 
           <div
@@ -48,10 +48,10 @@ export default function FacultySection({ onOpenComingSoon }) {
               <Award className="w-12 h-12" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-xl text-stone-900">Karate & Yoga Instructors</h3>
-              <p className="text-xs text-brand-green font-semibold mt-1">Physical Fitness & Discipline</p>
+              <h3 className="font-serif font-bold text-xl text-stone-900">Co-Curricular Instructors</h3>
+              <p className="text-xs text-brand-green font-semibold mt-1">Karate, Yoga, Music & Skating</p>
             </div>
-            <p className="text-xs text-stone-500 leading-relaxed">Certified martial arts masters and yoga practitioners guiding weekly physical development.</p>
+            <p className="text-xs text-stone-500 leading-relaxed">Certified activity masters guiding weekly physical fitness, music, and cultural development.</p>
           </div>
 
           <div
